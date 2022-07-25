@@ -1,0 +1,4 @@
+.vscode
+
+template.*
+!template.tex

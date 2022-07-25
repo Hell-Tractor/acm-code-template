@@ -1,0 +1,192 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,11pt,twoside,fontset = fandol,UTF8]{ctexbook}
+
+\usepackage[a4paper,scale=0.8,hcentering,bindingoffset=8mm]{geometry}
+\usepackage{listings} % 代码块
+\usepackage[hidelinks]{hyperref}
+\usepackage{color} % 颜色
+\usepackage{fontspec} % 字体
+\usepackage{graphicx} % 图片
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{lastpage}
+\usepackage{afterpage}
+\usepackage{xeCJK}
+\usepackage{framed}
+
+\definecolor{orange}{rgb}{1, 0.64, 0}
+
+% 代码块属性设置
+\lstset{
+  language=C++,
+  numbers=left,
+  frame=single,
+  tabsize=2,
+  backgroundcolor=\color[RGB]{245, 245, 244},
+  showstringspaces=false,
+  basicstyle=\fontspec{Consolas},
+  rulecolor=\color{black},
+  commentstyle=\color[RGB]{0, 120, 0},
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color[RGB]{128, 0, 0},
+  morecomment=[l][\color{red}]{//\ !},
+  morecomment=[l][\color{cyan}]{//\ *},
+  morecomment=[l][\color{orange}]{//\ ?},
+  mathescape=true,
+  breaklines=true
+}
+
+% 页码设置
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyfoot[C]{\thepage\ / \pageref{LastPage}}
+\fancyhead[LE,RO]{\thepage}
+
+\fancypagestyle{plain}{
+  \fancyhead[LE,RO]{\thepage}
+}
+
+\definecolor{shadecolor}{rgb}{0.92, 0.92, 0.92}
+
+\newcommand{\emptyPage}{\null\thispagestyle{empty}\addtocounter{page}{-1}\newpage}
+%代码块设置
+%param: author, desp, time, space, code
+\newcommand{\code}[5]{
+  \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item \textbf{作者} \\ #1
+    \item \textbf{描述} \\ #2
+    \item \textbf{时间复杂度} \\ O($ #3 $)
+    \item \textbf{空间复杂度} \\ O($ #4 $)
+    \item \textbf{代码}
+    \lstinputlisting{#5}
+  \end{itemize}
+}
+
+\begin{document}
+  \begin{titlepage}       % 封面
+    \centering
+    \vspace*{\baselineskip}
+    \rule{\textwidth}{1.6pt}
+    \vspace*{-\baselineskip}
+    \vspace*{2pt}
+    \rule{\textwidth}{0.4pt}\\[\baselineskip]{\LARGE CODE TEMPALTE\\[\baselineskip]\small for ACM XCPC}
+    \\[0.2\baselineskip]
+    \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+    \rule{\textwidth}{1.6pt}\\[\baselineskip]
+    \scshape
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.3\textwidth]{icpc}    % 当前tex文件同一目录下名为icpc的任意格式图片
+    \end{figure}
+
+    \vspace*{3\baselineskip}
+    Edit by Team\\
+    [\baselineskip]
+    {\Large \CJKfontspec{Microsoft YaHei UI}  \par}
+    {\Large Love Cut Love Cut Love \\ \normalsize{at XMU}\par}
+    \vfill
+    {\scshape 2021.11}\\{\large XIAMEN}\par
+  \end{titlepage}
+
+  \emptyPage
+
+  \setcounter{page}{1}
+  \tableofcontents
+
+  \newpage
+  \setcounter{page}{1}
+
+  \chapter{图论}
+  \setcounter{page}{1}
+  \section{最短路}
+  \subsection{Dijkstra}
+  \code{Hell Tractor}{优先队列优化Dijkstra}{MlogM}{N + M}{codes/dijkstra.cpp}
+  \section{Tarjan}
+  \subsection{SCC}
+  \code{Hell Tractor}{Tarjan求强连通分量}{N + M}{N + M}{codes/tarjan_scc.cpp}
+  \subsection{BCC}
+  \code{Hell Tractor}{Tarjan求边双连通分量}{N + M}{N + M}{codes/tarjan_bcc.cpp}
+  \section{网络流}
+  \subsection{ISAP最大流}
+  \code{Hell Tractor}{没什么好说的}{N ^ 2 M}{N + M}{codes/isap.cpp}
+  \subsection{Dinic费用流}
+  \code{Hell Tractor}{基于SPFA实现, f为最大流}{NMf}{N + M}{codes/dinic.cpp}
+  
+  \chapter{树}
+  \section{线段树}
+  \subsection{递归式线段树}
+  \code{Hell Tractor}{没什么好说的}{logN}{N * 4}{codes/segmentTree.cpp}
+  \subsection{zkw线段树}
+  \code{Hell Tractor}{没什么好说的}{logN}{N * 4}{codes/zkw.cpp}
+  \section{倍增}
+  \code{Hell Tractor}{没什么好说的}{logN}{NlogN}{codes/lca.cpp}
+  \section{重链剖分}
+  \code{Hell Tractor}{没什么好说的}{logN}{N * k}{codes/HLD.cpp}
+  \section{平衡树}
+  \subsection{Treap}
+  \code{Hell Tractor}{没什么好说的}{logN}{N}{codes/treap.cpp}
+  \subsection{替罪羊树}
+  \code{Hell Tractor}{没什么好说的}{logN}{N}{codes/ScapeGoatTree.cpp}
+  \subsection{Splay}
+  \code{Hell Tractor}{区间反转+区间操作}{logN}{N}{codes/splay.cpp}
+  
+  \chapter{其他数据结构}
+  \section{ST表}
+  \code{jjjjssss6}{区间最值维护}{NlogN or 1}{NlogN}{codes/st.cpp}
+  \section{莫队}
+  \code{jjjjssss6}{没什么好说的}{N\sqrt{N}}{N}{codes/mo.cpp}
+
+  \chapter{数论}
+  \section{快速傅里叶变换}
+  \code{Hell Tractor}{将多项式系数表达转换为点值表达}{NlogN}{N}{codes/FFT.cpp}
+  \section{扩展欧几里得}
+  \code{Hell Tractor}{求解二元一次不定方程}{Metaphysics}{1}{codes/exgcd.cpp}
+  \section{逆元}
+  \code{jjjjssss6}{exgcd求逆元}{Metaphysics}{1}{codes/inv.cpp}
+  \section{中国剩余定理}
+  \code{jjjjssss6}{没什么好说的}{N}{N}{codes/crt.cpp}
+  \section{Lucas定理}
+  \code{jjjjssss6}{求组合数}{N}{N}{codes/lucas.cpp}
+  \section{矩阵}
+  \code{Hell Tractor}{没什么好说的}{N \; or \; N ^ 2}{N}{codes/matrix.cpp}
+  \section{快速幂}
+  \code{Hell Tractor}{没什么好说的}{logN}{1}{codes/qpow.cpp}
+  \section{高斯消元}
+  \code{jjjjssss6}{线性方程组求解}{N^3}{N^2}{codes/GaussianElimination.cpp}
+  \section{线性基}
+  \code{jjjjssss6}{n个数选任意个使异或值最大}{N^2}{N}{codes/basis.cpp}
+  \section{数论分块}
+  \code{jjjjssss6}{$f(i)=\lfloor \frac{n}{i} \rfloor = v$ 时 $i$ 的取值范围是$[l, r]$}{N}{1}{codes/ntblock.cpp}
+  \section{欧拉函数}
+  \code{jjjjssss6}{小于x的数中与x互质的个数}{N}{N}{codes/EulerFunction.cpp}
+
+
+  \chapter{字符串}
+  \section{KMP}
+  \code{Hell Tractor}{字符串匹配}{NlogN}{N}{codes/kmp.cpp}
+  \section{AC自动机}
+  \code{jjjjssss6}{AC自动机加topo优化}{N}{N}{codes/ac_automation.cpp}
+  \section{PMT}
+  \code{jjjjssss6}{最长公共前缀}{N}{N}{codes/pmt.cpp}
+  \section{Manacher}
+  \code{jjjjssss6}{马拉车算法}{N}{N}{codes/manacher.cpp}
+  
+  \chapter{计算几何}
+  \section{向量}
+  \subsection{平面向量}
+  \code{Hell Tractor}{没什么好说的}{1}{1}{codes/vector2D.cpp}
+  \section{凸包}
+  \subsection{二维凸包}
+  \code{Hell Tractor}{没什么好说的}{NlogN}{N}{codes/convexHull.cpp}
+  
+  \chapter{杂项}
+  \section{代码头}
+  \lstinputlisting{codes/header.cpp}
+  \section{模拟退火}
+  \code{Hell Tractor}{使用时派生SA类，重写函数J, getNewState, checkState(可选重写)以及构造函数 \\  并需要设定type为所需求值类型}{Metaphysics}{1}{codes/SA.cpp}
+  \section{IO}
+  \code{Hell Tractor}{fread读入优化}{1}{1}{codes/IO.cpp}
+
+\end{document}
+\label{LastPage}
