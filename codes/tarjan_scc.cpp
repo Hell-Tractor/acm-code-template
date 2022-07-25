@@ -13,7 +13,8 @@ void Tarjan(int u) {
 	}
 	if (low[u] == dfn[u]) {
 		scc[u] = ++cnt;
-		while (stk[top] != u) scc[stk[top--]] = cnt;
+		while (stk[top] != u)
+			scc[stk[top--]] = cnt;
 		top--;
 	}
 }

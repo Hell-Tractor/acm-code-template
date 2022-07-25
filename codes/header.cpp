@@ -7,25 +7,24 @@ using namespace std;
 #define all(a) a.begin(), a.end()
 #define range(i, a) for (auto& i : a)
 #define RANGE(i, a) for (auto i = a.rbegin(); i != a.rend(); ++i)
-// #define SINGLE
+#define debug(a) cerr << #a << " = " << (a) << endl
+#define int ll
 using ll = long long;
-using pii = std::pair<int, int>;
-using pdd = std::pair<double, double>;
+using pii = pair<int, int>;
+using pdd = pair<double, double>;
 
 namespace Solver {
 
-  void main() {
+  void main(int T) {
     
   }
 }
 
-int main() {
-  std::ios::sync_with_stdio(false);
-  std::cin.tie(0);
-  #ifndef SINGLE
-  int T;
-  for (std::cin >> T; T--;)
-  #endif
-    Solver::main();
+signed main() {
+  cin.tie(0)->sync_with_stdio(false);
+  int T = 1;
+  cin >> T;
+  FOR (t, 1, T)
+    Solver::main(t);
   return 0;
 }

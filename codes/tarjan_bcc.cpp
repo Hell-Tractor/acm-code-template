@@ -8,10 +8,13 @@ void Tarjan(int u, bool isRoot = false) {
 		if (!dfn[v]) {
 			Tarjan(v);
 			low[u] = min(low[u], low[v]);
-			if (!isRoot && low[v] >= dfn[u]) isCut[u] = true;
-			if (isRoot) child++;
+			if (!isRoot && low[v] >= dfn[u])
+				isCut[u] = true;
+			if (isRoot)
+				child++;
 		} else
 			low[u] = min(low[u], dfn[v]);
 	}
-	if (isRoot && child >= 2) isCut[u] = true;
+	if (isRoot && child >= 2)
+		isCut[u] = true;
 }
