@@ -15,16 +15,16 @@ using pdd = pair<double, double>;
 
 namespace Solver {
 
-  void main(int T) {
-    
-  }
+	void main(int T) {
+		
+	}
 }
 
 signed main() {
-  cin.tie(0)->sync_with_stdio(false);
-  int T = 1;
-  cin >> T;
-  FOR (t, 1, T)
-    Solver::main(t);
-  return 0;
+	cin.tie(0)->sync_with_stdio(false);
+	int T = 1;
+	cin >> T;
+	FOR (t, 1, T)
+		Solver::main(t);
+	return 0;
 }
