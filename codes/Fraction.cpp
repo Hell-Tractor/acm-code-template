@@ -1,7 +1,7 @@
 template <typename T>
 class Fraction {
 	private:
-		// \frac{a}{b}
+		// $\frac{a}{b}$
 		T a, b;
 	public:
 		Fraction() : a(0), b(1) {}
