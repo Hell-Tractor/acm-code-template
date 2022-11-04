@@ -123,6 +123,15 @@
   待填
   \subsection{KM算法}
   待填
+  \subsection{欧拉(回)路}
+  \code{Hell Tractor}{
+    \begin{itemize}
+      \item 无向图是欧拉图：当且仅当非零度顶点连通，且顶点的度都为偶数
+      \item 无向图是半欧拉图：当且仅当非零度顶点连通，且恰有0或2个顶点的度为奇数
+      \item 有向图是欧拉图：当且仅当非零度顶点强连通，且每个顶点的入度等于出度
+      \item 有向图是半欧拉图：当且仅当非零度顶点弱连通，且至多有一个顶点的入度比出度大1，至多有一个顶点的出度比入度大1，其余顶点的入度等于出度
+    \end{itemize}
+  }{N + M}{N + M}{codes/hierholzer.cpp}
   
   \chapter{树}
   \section{线段树}
