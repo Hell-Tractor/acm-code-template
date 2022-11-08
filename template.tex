@@ -127,7 +127,7 @@
   待填
   \subsection{KM算法}
   待填
-  \subsection{欧拉(回)路}
+  \section{欧拉(回)路}
   \code{Hell Tractor}{
     \begin{itemize}
       \item 无向图是欧拉图：当且仅当非零度顶点连通，且顶点的度都为偶数
@@ -136,6 +136,13 @@
       \item 有向图是半欧拉图：当且仅当非零度顶点弱连通，且至多有一个顶点的入度比出度大1，至多有一个顶点的出度比入度大1，其余顶点的入度等于出度
     \end{itemize}
   }{N + M}{N + M}{codes/hierholzer.cpp}
+  \section{最小生成树}
+  \subsection{Kruskal}
+  \code{Hell Tractor}{没什么好说的}{MlogM}{N + M}{codes/kruskal.cpp}
+  \subsection{优先队列优化Prim}
+  \code{Hell Tractor}{一般情况下都使用Kruskal算法。在稠密图尤其是完全图上，暴力Prim（本算法不是暴力Prim）的复杂度比Kruskal优，但\textbf{不一定}实际跑得更快。}{(N + M)logN}{N + M}{codes/prim.cpp}
+  \subsection{暴力Prim}
+  \code{Hell Tractor}{暴力Prim}{N ^ 2 + M}{N + M}{codes/prim_cruel.cpp}
   
   \chapter{树}
   \section{线段树}
@@ -161,7 +168,7 @@
   \section{莫队}
   \code{jjjjssss6}{没什么好说的}{N\sqrt{N}}{N}{codes/mo.cpp}
   \section{并查集}
-  \code{Hell Tractor}{没什么好说的}{N}{N}{codes/ufs.cpp}
+  \code{Hell Tractor}{没什么好说的}{N\alpha(N)}{N}{codes/ufs.cpp}
 
   \chapter{数论}
   \section{快速傅里叶变换}
