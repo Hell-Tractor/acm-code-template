@@ -1,5 +1,5 @@
 const int N = 3e3 + 5;
-const int INF = 1'000'000'000;
+const int INF = 1000000000;
 vector<pii> edge[N];
 int h[N], dis[N][N];
 int n, m;
