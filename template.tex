@@ -101,9 +101,13 @@
   \setcounter{page}{1}
   \section{最短路}
   \subsection{Dijkstra}
-  \code{Hell Tractor}{优先队列优化Dijkstra \\ {\color{red}不能处理负环}}{MlogM}{N + M}{codes/dijkstra.cpp}
+  \code{Hell Tractor}{优先队列优化Dijkstra \\ {\color{red}不能处理负环与负权图（带负边的图为负权图）} \\ 负权图的处理可以借鉴Johnson全源最短路为每个点增加势能的思想}{MlogM}{N + M}{codes/dijkstra.cpp}
   \subsection{暴力Dijkstra}
-  待填
+  \code{Hell Tractor}{暴力Dijkstra}{N^2 + M}{N + M}{codes/dijkstra_cruel.cpp}
+  \subsection{Bellman-Ford}
+  \code{Hell Tractor}{求负环 \\ {\color{red}只能判定以s为起点是否能抵达负环，若要判断图中是否有负环，需要建立超级源点，并向所有其他点连一条边权为0的有向边。}}{NM}{N + M}{codes/bellman_ford.cpp}
+  \subsection{Johnson}
+  \code{Hell Tractor}{任意图全源最短路}{NMlogM}{N^2 + M}{codes/johnson.cpp}
   \section{Tarjan}
   \subsection{SCC}
   \code{Hell Tractor}{Tarjan求强连通分量}{N + M}{N + M}{codes/tarjan_scc.cpp}
@@ -123,6 +127,15 @@
   待填
   \subsection{KM算法}
   待填
+  \subsection{欧拉(回)路}
+  \code{Hell Tractor}{
+    \begin{itemize}
+      \item 无向图是欧拉图：当且仅当非零度顶点连通，且顶点的度都为偶数
+      \item 无向图是半欧拉图：当且仅当非零度顶点连通，且恰有0或2个顶点的度为奇数
+      \item 有向图是欧拉图：当且仅当非零度顶点强连通，且每个顶点的入度等于出度
+      \item 有向图是半欧拉图：当且仅当非零度顶点弱连通，且至多有一个顶点的入度比出度大1，至多有一个顶点的出度比入度大1，其余顶点的入度等于出度
+    \end{itemize}
+  }{N + M}{N + M}{codes/hierholzer.cpp}
   
   \chapter{树}
   \section{线段树}
