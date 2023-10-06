@@ -12,6 +12,7 @@
 \usepackage{afterpage}
 \usepackage{xeCJK}
 \usepackage{framed}
+\usepackage{amsmath}
 
 \definecolor{orange}{rgb}{1, 0.64, 0}
 
@@ -94,7 +95,10 @@
   \setcounter{page}{1}
   \tableofcontents
 
+
   \newpage
+  \emptyPage
+
   \setcounter{page}{1}
 
   \chapter{图论}
@@ -194,7 +198,7 @@
   \section{欧拉函数}
   \code{jjjjssss6}{小于x的数中与x互质的个数}{N}{N}{codes/EulerFunction.cpp}
   \section{数学公式}
-  待填
+  \input{math.tex}
 
 
   \chapter{字符串}

@@ -1,0 +1,142 @@
+\subsection{平方和公式}
+$$
+\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+$$
+\subsection{立方和公式}
+$$
+\sum_{i=1}^n i^3 = \left[\frac{n(n+1)}{2}\right]^2
+$$
+\subsection{排列组合公式}
+\begin{itemize}
+	\item 在 $n$ 个不同物体中，可重复的选取 $r$ 个物体的排列数为：$n^r$
+	\item 在 $n$ 个不同物体中，可重复的选取 $r$ 个物体的组合数为：$C_{n+r-1}^r$
+	\item 在 $A=\{1, 2, \cdots, n\}$ 中取 $r$ 个不相邻的数进行组合，其组合数为：$C_{n-r+1}^r$
+	\item  $n$ 个物体中不相同的物体的总数是 $k$ 个，即 $n=\sum_{i=1}^k n_i$ ，则这几个物体全排列数是：$\frac{n!}{\prod_{i=1}^k n_i!}$
+	\item 圆周排列（选取的物体不分先后）：$\frac{A_n^r}{r}$
+	\item 项链排列（在圆周排列的基础上，正面向上和反面向上两种方式放置个数是同一个排列）：$\frac{A_n^r}{2r}$
+\end{itemize}
+\subsection{多重集}
+在 $S$ 中任选r个元素的组合称为 $S$ 的 $r$ 组合，$\forall i$ 当 $r \leq n_i$ 时，有公式$C(n; n_1 \times a_1, n_2 \times a_2, \cdots, n_k \times a_k)=C_{k + r - 1}^r$ \\
+\hspace*{0.7cm} 由公式可以看出多重集合的组合只与类别数 $k$ 和选取的元素 $r$ 有关，与总数无关。
+\begin{itemize}
+	\item 设元素 $a_1, a_2, \cdots, a_n$ 互不相同，从无限多重集 $\{\infty \times a_1, \infty \times a_2, \cdots, \infty \times a_n\}$ 中取 $r$ 个元素的组合数为：$C_{n + r - 1}^r$
+	\item 设元素 $a_1, a_2, \cdots, a_n$ 互不相同，从有限多重集 $\{k_1 \times a_1, k_2 \times a_2, \cdots, k_3 \times a_n\}$，各 $k$ 均大于等于 $r$，取 $r$ 个元素的组合数为：$C_{n + r - 1}^r$
+	\item 设元素 $a_1, a_2, \cdots, a_n$ 互不相同，从有限多重集 $\{k_1 \times a_1, k_2 \times a_2, \cdots, k_3 \times a_n\}$ 中取 $r$ 个元素，至少存在一个 $k_i < r$ 时，令生成函数 $G(x) = \sum_{j = 0}^{k_i} x^j, i = 1, 2, \cdots, n$，$G(x)$ 中 $x_r$ 的系数即为所求
+\end{itemize}
+\subsection{海伦公式}
+设平面内有一个三角形，边长分别为 $a$，$b$，$c$，则三角形的面积 $S = \sqrt{p(p-a)(p-b)(p-c)}$，其中 $p=\frac{a+b+c}{2}$
+\subsection{点到直线的距离公式}
+$$
+d = \frac{\left| Ax_0 + By_0 + C \right|}{\sqrt{A^2 + B^2}}
+$$
+\subsection{点到平面的距离公式}
+$$
+d = \frac{\left| Ax_0 + By_0 + Cz_0 + D \right|}{\sqrt{A^2 + B^2 + C^2}}
+$$
+\begin{itemize}
+	\item 三角形重心：\\ 设某个三角形的重心为 $G(cx, cy)$，顶点坐标分别为$A_1(x_1, y_1)$，$A_2(x_2, y_2)$，$A_3(x_3, y_3)$，则有：
+		$$
+		cx = \frac{x_1 + x_2 + x_3}{3} \qquad cy = \frac{y_1 + y_2 + y_3}{3}
+		$$
+	\item 多边形重心: \\
+		$$
+		cx = \frac{\sum_i cx_i \times s_i}{3 \times \sum_i s_i}
+		\qquad
+		cy = \frac{\sum_i cy_i \times s_i}{3 \times \sum_i s_i}
+		$$
+		其中，$(cx_i, cy_i)$，$s_i$分别是所划分的第$i$个三角形的重心和面积
+\end{itemize}
+\subsection{斯特林公式}
+$$
+n! \approx \sqrt{2 \pi n}\left(\frac{n}{e}\right)^n
+$$
+更加准确的极限
+$$
+\lim_{n \rightarrow \infty} \frac{e^n n!}{n^n \sqrt{n}} = \sqrt{2 \pi}
+\quad OR \quad
+\lim_{n \rightarrow \infty} \frac{n!}{\sqrt{2 \pi n} \left(\frac{n}{e}\right)^n} = 1
+$$
+\subsection{范德蒙德卷积}
+$$
+\sum_{i = 0}^k \binom{n}{i} \binom{m}{k - i} = \binom{n + m}{k}
+$$
+\subsection{汉诺塔}
+$$
+2^{n - 1}
+$$
+\subsection{基姆拉尔森公式（计算某天是星期几）}
+$$
+w = \left( d + 2m + 3 \left( \frac{m + 1}{5} \right) + y + \left( \frac{y}{4} \right) - \left( \frac{y}{100} \right) + \left( \frac{y}{400} \right) + 1 \right) \% 7
+$$
+\subsection{卡特兰数}
+应用：进出栈问题、排队方式、二叉树生成问题、凸多边形三角形划分、括号匹配问题、满二叉树个数、圆划分问题、填充问题
+\begin{itemize}
+	\item 递推公式1 \\
+		$$
+		f(n) = \sum_{i = 0}^{n - 1} f(i) \times f(n - i - 1)
+		$$
+	\item 递推公式2 \\
+		$$
+		f(n) = \frac{2(2n - 1)f(n - 1)}{n + 1}
+		$$
+	\item 组合公式1 \\
+		$$
+		f(n) = \frac{C_{2n}^n}{n + 1}
+		$$
+	\item 组合公式2 \\
+		$$
+		f(n) = C_{2n}^{n} - C_{2n}^{n - 1}
+		$$
+	\item 通项公式 \\
+		$$
+		C_n = \binom{2n}{n} - \binom{2n}{n - 1}  = \frac{\binom{2n}{n}}{n + 1} = \frac{C_{n-1} (4n - 2)}{n + 1}
+		$$
+	\item 生成函数 \\
+		$$
+		C(x) = \frac{1 - \sqrt{1 - 4x}}{2x}
+		$$
+\end{itemize}
+\subsection{贝尔数}
+$B_n$ 表示将 $n$ 个集合划分成若干个非空集合的方案数
+\begin{itemize}
+	\item 递推公式 \\
+		$$
+		B_n = \sum_{i = 0}^{n - 1} \binom{n - 1}{i} B_i
+		$$
+	\item 通项公式 \\
+		$$
+		B_n = \frac{1}{e} \sum_{i \geq 0} \frac{i^n}{i!}
+		$$
+\end{itemize}
+\subsection{分拆数}
+将 $n$ 进行整数分拆的方案数 $O(n\sqrt{n})$
+$$
+F_n = \left\{
+	\begin{aligned}
+		& 0 & n < 0 \\
+		& 1 & n = 0 \\
+		& \sum_{k \geq 1} (-1)^{k + 1} \left(F_{n - \frac{k(3k - 1)}{2}} + F_{n - \frac{k(3k + 1)}{2}}\right) & n > 0
+	\end{aligned}
+	\right.
+$$
+\subsection{康托展开}
+当前排列在全排列中的名次问题
+$$
+X = \sum_{i = 1}^n a_i \times (i - 1)!
+$$
+\subsection{旋转同构}
+$n$ 个点，每个点移动 $k(0 \leq k \leq n - 1)$ 步，循环个数为：$gcd(k, n)$
+\subsection{循环同构}
+圆上有 $n$ 个点，$k$ 种颜色，旋转同构，求总方案数
+$$
+ans = \frac{1}{n}\sum_{i = 0}^{n - 1} k \times gcd(i, n)
+$$
+\subsection{对称同构}
+圆上有 $n$ 个点，$k$ 种颜色，旋转同构、翻转同构，求总方案数 \\
+\hspace*{0.7cm} 旋转同构总共形成 $a = \sum_{i = 0}^{n - 1} k^{gcd(i, n)}$ 个不动点 \\
+\hspace*{0.7cm} 翻转同构分两种情况考虑：
+\begin{itemize}
+	\item 当\textbf{ $n$ 为奇数时}，对称轴有 $n$ 条，每条对称轴形成 $\frac{n - 1}{2}$ 个长度为 $2$ 的循环，$1$ 个长度为 $1$ 的循环（对称轴一定过一个顶点），共 $\frac{n - 1}{2} + 1 = \frac{n + 1}{2}$ 个循环。 \\ 因此总共形成 $b = nk^{\frac{n + 1}{2}}$ 个不动点。
+	\item 当\textbf{ $n$ 为偶数时}，有两种对称轴。穿过两个点的对称轴有 $\frac{n}{2}$，共形成 $\frac{n}{2} + 1$ 个循环；不穿过点的对称轴有 $\frac{n}{2}$，共形成 $\frac{n}{2}$ 个循环。 \\ 因此总共形成 $b = \frac{n}{2}\left(k^{\frac{n}{2} + 1} + k^{\frac{n}{2}}\right)$ 个不动点。
+\end{itemize}
+\hspace*{0.7cm} 综上， $ans = \frac{a + b}{2n}$
