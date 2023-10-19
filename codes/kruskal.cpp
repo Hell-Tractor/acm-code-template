@@ -5,14 +5,14 @@ int Kruskal() {
   sort(all(edge), [](const tuple<int, int, int>& a, const tuple<int, int, int>& b) {
     return get<2>(a) < get<2>(b);
   });
-  UFS ufs(edge.size() + 1);
+  DSU dsu(edge.size() + 1);
   for (auto& [u, v, w] : edge) {
-    if (!ufs.check(u, v)) {
+    if (!dsu.check(u, v)) {
       ans += w;
       count++;
       if (count == n - 1)
         return ans;
-      ufs.union(u, v);
+      dsu.union(u, v);
     }
   }
 }

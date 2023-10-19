@@ -1,26 +1,28 @@
 template <int N>
-class UFS {
+class DSU {
   protected:
     int father[N];
     virtual int find(int a);
   public:
-    UFS();
+    DSU();
     virtual void merge(int a, int b);
     virtual bool check(int a, int b);
 };
 
 template <int N>
-class sizeUFS final : public UFS<N> {
+class sizeDSU final : public DSU<N> {
   private:
     int size[N];
   public:
-    sizeUFS();
+    sizeDSU();
     virtual void merge(int a, int b);
 };
 
 template <int N>
-void sizeUFS<N>::merge(int a, int b) {
+void sizeDSU<N>::merge(int a, int b) {
   a = this->find(a), b = this->find(b);
+  if (a == b)
+    return;
   if (size[a] < size[b]) {
     swap(a, b);
   }
@@ -29,28 +31,28 @@ void sizeUFS<N>::merge(int a, int b) {
 }
 
 template <int N>
-sizeUFS<N>::sizeUFS() : UFS<N>() {
+sizeDSU<N>::sizeDSU() : DSU<N>() {
   for (int i = 0; i < N; ++i)
     size[i] = 1;
 }
 
 template <int N>
-UFS<N>::UFS() {
+DSU<N>::DSU() {
   for (int i = 0; i < N; ++i)
     father[i] = i;
 }
 
 template <int N>
-int UFS<N>::find(int a) {
+int DSU<N>::find(int a) {
   return father[a] == a ? a : father[a] = find(father[a]);
 }
 
 template <int N>
-void UFS<N>::merge(int a, int b) {
+void DSU<N>::merge(int a, int b) {
   father[find(b)] = find(a);
 }
 
 template <int N>
-bool UFS<N>::check(int a, int b) {
+bool DSU<N>::check(int a, int b) {
   return find(a) == find(b);
 }

@@ -7,7 +7,7 @@ using namespace std;
 #define all(a) a.begin(), a.end()
 #define range(i, a) for (auto& i : a)
 #define RANGE(i, a) for (auto i = a.rbegin(); i != a.rend(); ++i)
-#define debug(a) cerr << #a << " = " << (a) << endl
+#define debug(a) #a " = " << (a)
 #define int ll
 using ll = long long;
 using pii = pair<int, int>;
