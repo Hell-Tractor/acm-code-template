@@ -157,6 +157,16 @@
   \code{Hell Tractor}{没什么好说的}{logN}{N * 4}{codes/zkw.cpp}
   \section{倍增}
   \code{Hell Tractor}{没什么好说的}{logN}{NlogN}{codes/lca.cpp}
+  \section{欧拉序转RMQ问题求LCA}
+  \code{Hell Tractor}{
+    \textbf{欧拉序列}：对一棵树进行 DFS，无论是第一次访问还是回溯，每次到达一个结点时都将编号记录下来，可以得到一个长度为 2n-1 的序列，这个序列被称作这棵树的欧拉序列。\\
+    \textbf{原理}: 若将节点$u$在欧拉序列中第一次出现的位置编号记为$pos(u)$(也称作节点$u$的欧拉序)。欧拉序列记为$E[1 \dots 2n-1]$。 \\
+    则LCA问题可以在线性时间内转换为RMQ问题，即
+    $$
+    pos(LCA(u, v)) = \min\{pos(k) | k \in E[pos(u) \dots pos(v)]\}
+    $$
+    每次查询复杂度为: O($1$)
+  }{NlogN}{N}{codes/euler_lca.cpp}
   \section{重链剖分}
   \code{Hell Tractor}{没什么好说的}{logN}{N * k}{codes/HLD.cpp}
   \section{平衡树}
