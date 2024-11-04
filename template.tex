@@ -148,7 +148,7 @@
   \code{Hell Tractor}{一般情况下都使用Kruskal算法。在稠密图尤其是完全图上，暴力Prim（本算法不是暴力Prim）的复杂度比Kruskal优，但\textbf{不一定}实际跑得更快。}{(N + M)logN}{N + M}{codes/prim.cpp}
   \subsection{暴力Prim}
   \code{Hell Tractor}{暴力Prim}{N ^ 2 + M}{N + M}{codes/prim_cruel.cpp}
-  
+
   \chapter{树}
   \section{线段树}
   \subsection{递归式线段树}
@@ -176,7 +176,7 @@
   \code{Hell Tractor}{没什么好说的}{logN}{N}{codes/ScapeGoatTree.cpp}
   \subsection{Splay}
   \code{Hell Tractor}{区间反转+区间操作}{logN}{N}{codes/splay.cpp}
-  
+
   \chapter{其他数据结构}
   \section{ST表}
   \code{jjjjssss6}{区间最值维护}{NlogN or 1}{NlogN}{codes/st.cpp}
@@ -208,6 +208,12 @@
   \code{jjjjssss6}{$f(i)=\lfloor \frac{n}{i} \rfloor = v$ 时 $i$ 的取值范围是$[l, r]$}{N}{1}{codes/ntblock.cpp}
   \section{欧拉函数}
   \code{jjjjssss6}{小于x的数中与x互质的个数}{N}{N}{codes/EulerFunction.cpp}
+  \section{区间异或和}
+  \code{Hell Tractor}{
+    该函数用于求出区间$[0, x]$的异或和 \\
+    区间$[l, r]$的异或和为：
+    $$ xor\_sum(l, r) = xor\_sum(0, r) \oplus xor\_sum(0, l - 1) $$
+  }{1}{1}{codes/xor_sum.cpp}
   \section{数学公式}
   \input{math.tex}
 
@@ -228,7 +234,7 @@
   \code{jjjjssss6}{广义SAM}{N}{N}{codes/exSAM.cpp}
   \section{SA}
   \code{jjjjssss6}{后缀数组}{N}{N}{codes/string_SA.cpp}
-  
+
   \chapter{计算几何}
   \section{向量}
   \subsection{平面向量}
@@ -236,7 +242,7 @@
   \section{凸包}
   \subsection{二维凸包}
   \code{Hell Tractor}{没什么好说的}{NlogN}{N}{codes/convexHull.cpp}
-  
+
   \chapter{杂项}
   \section{代码头}
   \lstinputlisting{codes/header.cpp}
