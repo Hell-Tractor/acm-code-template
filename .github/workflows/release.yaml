@@ -1,0 +1,38 @@
+name: Build LaTeX Project
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install TeX Live
+        run: |
+          sudo apt update
+          sudo apt install -y texlive-full texlive-lang-chinese
+
+      - name: Build PDF
+        run: |
+          OUTPUT_FILE="ACM Code Template ${{ github.ref_name }}.pdf"
+          pdflatex -jobname="${OUTPUT_FILE}" template.tex
+          pdflatex -jobname="${OUTPUT_FILE}" template.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: document
+          path: "ACM Code Template ${{ github.ref_name }}.pdf"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "ACM Code Template ${{ github.ref_name }}.pdf"
+          draft: true
+          name: ACM Code Template ${{ github.ref_name }} release
